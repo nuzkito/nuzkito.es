@@ -5,7 +5,6 @@ permalink: introduccion-a-sails-js-un-framework-para-crear-aplicaciones-realtime
 date_published: 2014-08-02T16:55:50.000Z
 date_updated: 2014-08-02T20:36:11.000Z
 tags:
-- Nodejs2
 - JavaScript
 ---
 

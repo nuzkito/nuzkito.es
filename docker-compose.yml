@@ -4,6 +4,7 @@ services:
     volumes:
       - "./:/var/www"
     working_dir: "/var/www"
+    entrypoint: []
   server:
     image: femtopixel/eleventy
     command: --serve

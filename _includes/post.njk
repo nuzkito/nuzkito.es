@@ -22,7 +22,7 @@ layout: layout.njk
                 </span>
                 <div class="Post-tags">
                     {%- for tag in tags -%}
-                        <a href="/tag/{{ tag }}">{{ tag }}</a>
+                        <a href="/etiqueta/{{ tag | slugify }}">{{ tag }}</a>
                     {%- endfor -%}
                 </div>
             </section>

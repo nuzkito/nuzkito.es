@@ -31,7 +31,7 @@ eleventyExcludeFromCollections: true
                 </span>
                 <div class="Post-tags">
                     {%- for tag in post.data.tags -%}
-                        <a href="/tag/{{ tag }}">{{ tag }}</a>
+                        <a href="/etiqueta/{{ tag | slugify }}">{{ tag }}</a>
                     {%- endfor -%}
                 </div>
             </footer>
