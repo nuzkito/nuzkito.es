@@ -1,0 +1,12 @@
+@import 'variables.css';
+@import 'fonts.css';
+@import 'default.css';
+
+@import 'components/pagination.css';
+@import 'components/header.css';
+@import 'components/nav.css';
+@import 'components/footer.css';
+@import 'components/post.css';
+@import 'components/latest-posts.css';
+@import 'components/contact.css';
+@import 'components/tag-page.css';

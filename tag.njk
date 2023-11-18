@@ -1,0 +1,42 @@
+---
+layout: layout
+pagination:
+    data: collections
+    size: 1
+    alias: tag
+permalink: /tag/{{ tag }}/
+eleventyExcludeFromCollections: true
+---
+
+<main class="content" role="main">
+    <header class="TagPageHeader">
+        <h1>Publicaciones sobre {{ tag }}</h1>
+    </header>
+    {%- for post in collections[tag] | reverse -%}
+        <article class="Post">
+            <header class="Post-header">
+                <h2 class="Post-title">
+                    <a href="{{ post.page.url }}">{{ post.data.title }}</a>
+                </h2>
+            </header>
+            {% if post.data.description %}
+                <section class="Post-excerpt">
+                    <p>{{ post.data.description }}</p>
+                </section>
+            {% endif %}
+            <footer class="Post-meta">
+                <time class="Post-date" datetime="{{ post.data.date_published.toString() }}">
+                    {{ post.data.date_published.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' }) }}
+                </time>
+                <span class="Post-readingTime">
+                    {{ post | timeToRead }} de lectura
+                </span>
+                <div class="Post-tags">
+                    {%- for tag in post.data.tags -%}
+                        <a href="/tag/{{ tag }}">{{ tag }}</a>
+                    {%- endfor -%}
+                </div>
+            </footer>
+        </article>
+    {%- endfor -%}
+</main>

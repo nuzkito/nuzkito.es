@@ -1,0 +1,17 @@
+:root {
+    --fontFamily: 'Work Sans', sans-serif;
+
+    --separatorColor: hsl(0, 0%, 87%);
+    --branchColor: hwb(147 16% 42%);
+    --fontColor: hsl(202, 9%, 25%);
+    --secondaryFontColor: hsl(0, 0%, 60%);
+    --backgroundColor: hsl(0, 0%, 100%);
+}
+
+.dark-mode {
+    --separatorColor: hsl(0, 0%, 13%);
+    --branchColor: hsl(147, 58%, 63%);
+    --fontColor: hsl(0, 0%, 95%);
+    --secondaryFontColor: hsl(0, 0%, 70%);
+    --backgroundColor: hsl(0, 0%, 13%);
+}

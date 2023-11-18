@@ -1,0 +1,21 @@
+---
+layout: layout
+eleventyExcludeFromCollections: true
+---
+{% set latestPosts = collections.all | reverse %}
+<main class="content" role="main">
+    <section class="Latest-posts">
+        <h1 class="Latest-posts--title">Lo último que he publicado</h1>
+        {%- for post in latestPosts.slice(0, 10) -%}
+            <ul class="Latest-posts--list">
+                <li class="Latest-posts--item">
+                    <a href="{{ post.page.url }}">{{ post.data.title }}</a>
+                    <br>
+                    <time class="Latest-posts--date" datetime="{{ post.data.date_published.toISOString() }}">
+                        {{ post.data.date_published.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' }) }}
+                    </time>
+                </li>
+            </ul>
+        {%- endfor -%}
+    </section>
+</main>

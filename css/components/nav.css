@@ -1,0 +1,12 @@
+.Nav {
+    display: flex;
+    padding: 0 .5rem;
+    justify-content: center;
+    margin-bottom: 1.2em;
+}
+
+.Nav a {
+    padding: .2em .5em;
+    transition: border-color .2s ease-in-out;
+    text-decoration: underline;
+}

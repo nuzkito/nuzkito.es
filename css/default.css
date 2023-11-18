@@ -1,0 +1,106 @@
+/* Estilos base */
+
+html {
+    box-sizing: border-box;
+    color: var(--fontColor);
+    font-family: var(--fontFamily);
+    font-size: 1.2rem;
+    font-weight: 300;
+    background-color: var(--backgroundColor);
+}
+
+body {
+    margin: 0;
+    font-feature-settings: 'kern' 1;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: minmax(auto, 39em);
+    margin: auto;
+    justify-content: center;
+    overflow-wrap: anywhere;
+}
+
+*,
+:before,
+:after {
+    /* box-sizing se define en el html, y se hereda en el resto de elementos. */
+    /* http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+    box-sizing: inherit;
+}
+
+code, pre {
+    white-space: pre-wrap !important;
+    overflow-wrap: anywhere !important;
+}
+
+hr {
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid var(--separatorColor);
+    border-left: none;
+}
+
+a {
+    color: var(--fontColor);
+    text-decoration: none;
+    transition: color 0.1s ease;
+}
+
+a:hover {
+    color: var(--branchColor);
+}
+
+strong {
+    font-weight: 700;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    line-height: 1.2em;
+}
+
+h1, .h1 {
+    font-size: 2rem;
+    letter-spacing: -0.03em;
+    margin: .5em 0 0;
+    text-align: center;
+}
+
+h2, .h2 {
+    font-size: 1.8rem;
+    letter-spacing: -0.03em;
+}
+
+h3, .h3 {
+    font-size: 1.65rem;
+}
+
+h4, .h4 {
+    font-size: 1.5rem;
+    margin: .5em;
+}
+
+h5, .h5 {
+    font-size: 1.35rem;
+}
+
+h6, .h6 {
+    font-size: 1.2rem;
+}
+
+.is-hidden {
+    display: none !important;
+}
+
+@media all and (min-width: 40em) {
+    html {
+        font-size: 1.3rem;
+    }
+}
+
+@media all and (min-width: 56em) {
+    html {
+        font-size: 1.4rem;
+    }
+}

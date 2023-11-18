@@ -1,0 +1,169 @@
+.Post:not(:last-of-type):after {
+    display: block;
+    content: '';
+    border-bottom: 1px dashed var(--separatorColor);
+}
+
+.Post-cover {
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    min-height: 10em;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.Post-titleCovered {
+    background: rgba(0, 0, 0, .7);
+    color: #fff;
+    padding: .3em 1rem .2em;
+    width: 100%;
+}
+
+.Post-title {
+    margin: .5em auto 0;
+    padding: 0 1rem;
+}
+
+.Post-meta {
+    font-size: .85em;
+    color: var(--secondaryFontColor);
+    line-height: 1.35em;
+    margin: 1em auto 1.5em;
+    padding: 0 1rem;
+}
+
+.Post a:hover {
+    color: var(--branchColor);
+}
+
+.Post-excerpt {
+    font-weight: 300;
+    word-wrap: break-word;
+    margin: auto;
+    padding: 0 1rem;
+    line-height: 1.6em;
+}
+
+.Post-content {
+    padding: .5em 1rem 1.5em;
+}
+
+.Post-content a {
+    text-decoration: underline;
+}
+
+.Post-content a:hover {
+    text-decoration-color: var(--branchColor);
+}
+
+.Post-content img {
+    max-width: 100%;
+    margin: auto;
+    display: block;
+}
+
+.Post-content iframe {
+    max-width: 100%;
+    margin: auto;
+    display: block;
+}
+
+.Post-content blockquote {
+    border-width: 1px 1px 1px .5em;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--branchColor);
+    background: #eee;
+    padding: 0 .8em;
+    margin-left: 1em;
+    margin-right: 1em;
+    font-size: .8em;
+}
+
+.Post-content :first-child {
+    margin-top: .5em;
+}
+
+.Post-content :last-child {
+    margin-bottom: .5em;
+}
+
+.Post-content pre {
+    font-size: .8em;
+}
+
+.Post-content p {
+    line-height: 1.6em;
+}
+
+.Post-content li {
+    margin: .5em 0;
+    line-height: 1.6em;
+}
+
+.Post-content :first-child {
+    margin-top: 0;
+}
+
+.Post-content code:not([class]) {
+    background: #272822;
+    color: white;
+    display: inline-block;
+    padding: 0 .4em;
+    line-height: 1.8em;
+    vertical-align: middle;
+    overflow: visible;
+    border-radius: .2em;
+}
+
+.Post-tags {
+    font-size: .8em;
+    margin-top: 1em;
+}
+
+.Post-tags a {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: .2em;
+    padding: .2em .8em;
+    transition: all .1s ease-in-out;
+    border: 1px solid currentColor;
+    background: var(--fontColor);
+    color: white;
+    border: none;
+    margin-right: .5em;
+}
+
+.Post-tags a:hover {
+    color: white;
+    background: var(--branchColor);
+}
+
+.Post-readingTime {
+    display: inline-block;
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+@media (min-width: 40em) {
+    .Post-cover {
+        min-height: 15em;
+    }
+
+    .Post-tags {
+        float: right;
+        margin-top: 0;
+    }
+
+    .Post-tags a {
+        margin-right: 0;
+        margin-left: .5em;
+        vertical-align: middle;
+    }
+}
+
+@media (min-width: 90em) {
+    .Post-cover {
+        min-height: 20em;
+    }
+}

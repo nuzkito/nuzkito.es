@@ -1,0 +1,15 @@
+.Latest-posts {
+    padding: 0 1rem;
+}
+
+.Latest-posts--title {
+    text-align: center;
+}
+
+.Latest-posts a {
+    text-decoration: underline;
+}
+.Latest-posts--date {
+    font-size: .85em;
+    color: var(--secondaryFontColor);
+}

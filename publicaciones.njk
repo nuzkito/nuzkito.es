@@ -1,0 +1,50 @@
+---
+layout: layout
+pagination:
+    data: collections.all
+    size: 20
+    alias: posts
+    reverse: true
+permalink: /publicaciones/pagina-{{ pagination.pageNumber + 1 }}/
+eleventyExcludeFromCollections: true
+---
+
+<main class="content" role="main">
+    {%- for post in posts -%}
+        <article class="Post">
+            <header class="Post-header">
+                <h2 class="Post-title">
+                    <a href="{{ post.page.url }}">{{ post.data.title }}</a>
+                </h2>
+            </header>
+            {% if post.data.description %}
+                <section class="Post-excerpt">
+                    <p>{{ post.data.description }}</p>
+                </section>
+            {% endif %}
+            <footer class="Post-meta">
+                <time class="Post-date" datetime="{{ post.data.date_published.toString() }}">
+                    {{ post.data.date_published.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' }) }}
+                </time>
+                <span class="Post-readingTime">
+                    {{ post | timeToRead }} de lectura
+                </span>
+                <div class="Post-tags">
+                    {%- for tag in post.data.tags -%}
+                        <a href="/tag/{{ tag }}">{{ tag }}</a>
+                    {%- endfor -%}
+                </div>
+            </footer>
+        </article>
+    {%- endfor -%}
+
+    <nav class="Pagination" role="navigation">
+        {% if pagination.href.previous %}
+            <a class="Pagination-newerPostsLink" href="{{ pagination.href.previous }}">Recientes</a>
+        {%- endif %}
+        <span class="Pagination-pageNumber">Página {{ pagination.pageNumber + 1 }}</span>
+        {% if pagination.href.next %}
+            <a class="Pagination-olderPostsLink" href="{{ pagination.href.next }}">Anteriores</a>
+        {% endif %}
+    </nav>
+</main>
