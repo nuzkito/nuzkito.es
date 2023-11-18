@@ -73,6 +73,13 @@
         "description": "{{ metadata.description }}"
     }
     </script>
+    {%- if config.environment === 'production' %}
+        <script defer
+            src="https://unpkg.com/@tinybirdco/flock.js"
+            data-host="https://api.tinybird.co"
+            data-token="p.eyJ1IjogImFmNjdkMDQ0LWRlMTctNGRjYi05MGEwLTI4NzQwZmJiNjZhYiIsICJpZCI6ICJlN2MxMmY3MS05NGZiLTRjYzItYmY1Mi04OWFkZTY4OGNlNWUiLCAiaG9zdCI6ICJldV9zaGFyZWQifQ.CeEhLo8M3MBqv0FN9x_i1Hi35lvW7hdFu-4hCD7RPCg">
+        </script>
+    {%- endif %}
 </head>
 
 <body>
