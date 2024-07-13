@@ -15,10 +15,14 @@ body {
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto auto 1fr auto;
-    grid-template-columns: minmax(auto, 39em);
+    grid-template-columns: 1fr minmax(auto, 39em) 1fr;
     margin: auto;
     justify-content: center;
     overflow-wrap: anywhere;
+}
+
+main {
+    grid-column: 2 / 3;
 }
 
 *,

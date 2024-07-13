@@ -1,6 +1,13 @@
 .Header {
-    padding: 2.5rem 1rem 1rem;
+    padding: 1rem;
     text-align: center;
+    grid-column: 1 / 4;
+
+    background: repeating-conic-gradient(
+        from 2deg at -5% 5%,
+        hsl(var(--branchColorHue), var(--branchColorSaturation), 96%) 0 5deg,
+        hsl(var(--branchColorHue), var(--branchColorSaturation), 92%) 5deg 10deg
+    );
 }
 
 .Header .name {
