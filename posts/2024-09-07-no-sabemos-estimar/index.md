@@ -3,6 +3,7 @@ layout: post.njk
 title: No sabemos estimar
 permalink: no-sabemos-estimar/
 date_published: 2024-09-07
+date_updated: 2024-09-07
 description: Una de las cosas que solemos hacer al desarrollar software es estimar cuánto vamos a tardar. El problema es que se nos da mal estimar por nuestra cuenta, por lo que tenemos que buscar alternativas que nos permitan tener mejores estimaciones.
 ---
 Una de las cosas que suelen tratar de hacer las empresas es estimar cuánto van a tardar en construir el software. Por lo general, la responsabilidad de realizar esas estimaciones recae sobre la gente que programa ese software.

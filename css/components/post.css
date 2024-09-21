@@ -1,7 +1,5 @@
-.Post:not(:last-of-type):after {
-    display: block;
-    content: '';
-    border-bottom: 1px dashed var(--separatorColor);
+.Post {
+    margin-top: 1rem;
 }
 
 .Post-cover {
@@ -21,32 +19,48 @@
 }
 
 .Post-title {
-    margin: .5em auto 0;
+    margin: 0 auto;
     padding: 0 1rem;
 }
 
 .Post-meta {
-    font-size: .85em;
+    font-size: .8em;
     color: var(--secondaryFontColor);
     line-height: 1.35em;
-    margin: 1em auto 1.5em;
     padding: 0 1rem;
 }
 
-.Post a:hover {
+.Post-publishedAt {
+    text-align: center;
+}
+
+.Post-modifiedAt {
+    text-align: center;
+}
+
+.Post-readingTime {
+    font-style: italic;
+    font-size: .8em;
+    text-align: center;
+}
+
+.Post-tags {
+    text-align: center;
+}
+
+.Post-tags a {
+    display: inline-block;
+    text-decoration: underline;
+    margin: 0 .5ch;
+    color: currentColor;
+}
+
+.Post-tags a:hover {
     color: var(--branchColor);
 }
 
-.Post-excerpt {
-    font-weight: 300;
-    word-wrap: break-word;
-    margin: auto;
-    padding: 0 1rem;
-    line-height: 1.6em;
-}
-
 .Post-content {
-    padding: .5em 1rem 1.5em;
+    padding: 1rem 1rem 1.5em;
 }
 
 .Post-content a {
@@ -54,6 +68,7 @@
 }
 
 .Post-content a:hover {
+    color: var(--branchColor);
     text-decoration-color: var(--branchColor);
 }
 
@@ -80,16 +95,12 @@
     font-size: .8em;
 }
 
-.Post-content :first-child {
-    margin-top: .5em;
-}
-
-.Post-content :last-child {
-    margin-bottom: .5em;
+.Post-content > :first-child {
+    margin-top: 0;
 }
 
 .Post-content pre {
-    font-size: .8em;
+    font-size: .8em !important;
 }
 
 .Post-content p {
@@ -101,64 +112,20 @@
     line-height: 1.6em;
 }
 
-.Post-content :first-child {
-    margin-top: 0;
-}
-
 .Post-content code:not([class]) {
     background: #272822;
-    color: white;
+    color: #f8f8f2;
     display: inline-block;
-    padding: 0 .4em;
-    line-height: 1.8em;
+    padding: 0 .3em;
+    line-height: 1.3em;
     vertical-align: middle;
-    overflow: visible;
     border-radius: .2em;
-}
-
-.Post-tags {
     font-size: .8em;
-    margin-top: 1em;
-}
-
-.Post-tags a {
-    display: inline-block;
-    text-decoration: none;
-    border-radius: .2em;
-    padding: .2em .8em;
-    transition: all .1s ease-in-out;
-    border: 1px solid currentColor;
-    background: var(--fontColor);
-    color: white;
-    border: none;
-    margin-right: .5em;
-}
-
-.Post-tags a:hover {
-    color: white;
-    background: var(--branchColor);
-}
-
-.Post-readingTime {
-    display: inline-block;
-    font-style: italic;
-    font-size: 0.8em;
 }
 
 @media (min-width: 40em) {
     .Post-cover {
         min-height: 15em;
-    }
-
-    .Post-tags {
-        float: right;
-        margin-top: 0;
-    }
-
-    .Post-tags a {
-        margin-right: 0;
-        margin-left: .5em;
-        vertical-align: middle;
     }
 }
 

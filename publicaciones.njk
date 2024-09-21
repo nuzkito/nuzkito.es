@@ -11,29 +11,35 @@ eleventyExcludeFromCollections: true
 
 <main class="content" role="main">
     {%- for post in posts -%}
-        <article class="Post">
-            <header class="Post-header">
+        <article class="PostListItem">
+            <header class="PostListItem-header">
                 <h2 class="Post-title">
                     <a href="{{ post.page.url }}">{{ post.data.title }}</a>
                 </h2>
             </header>
             {% if post.data.description %}
-                <section class="Post-excerpt">
-                    <p>{{ post.data.description }}</p>
+                <section class="PostListItem-excerpt">
+                    {{ post.data.description }}
                 </section>
             {% endif %}
-            <footer class="Post-meta">
-                <time class="Post-date" datetime="{{ post.data.date_published.toString() }}">
-                    {{ post.data.date_published.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' }) }}
-                </time>
+            <footer class="PostListItem-meta">
+                {%- if post.data.date_published.toDateString() === post.data.date_updated.toDateString() %}
+                    <time datetime="{{ post.data.date_published.toString() }}">
+                        Publicado el {{ post.data.date_published.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' }) }}
+                    </time>
+                {%- else %}
+                    <time class="Post-date" datetime="{{ post.data.date_updated.toISOString() }}">
+                        Actualizado el {{ post.data.date_updated.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' }) }}
+                    </time>
+                {%- endif %}
                 <span class="Post-readingTime">
                     {{ post | timeToRead }} de lectura
                 </span>
-                <div class="Post-tags">
+                <nav class="PostListItem-tags">
                     {%- for tag in post.data.tags -%}
                         <a href="/etiqueta/{{ tag | slugify }}">{{ tag }}</a>
                     {%- endfor -%}
-                </div>
+                </nav>
             </footer>
         </article>
     {%- endfor -%}

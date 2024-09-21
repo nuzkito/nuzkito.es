@@ -22,13 +22,13 @@
         <atom:link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self" type="application/rss+xml"/>
         <description>{{ metadata.description }}</description>
         <language>{{ metadata.language }}</language>
-        {%- for post in collections.post | reverse %}
+        {%- for post in collections.all | reverse %}
             {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
             <item>
                 <title>{{ post.data.title }}</title>
                 <link>{{ absolutePostUrl }}</link>
                 <description>{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</description>
-                <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
+                <pubDate>{{ (post.data.date_updated or post.data.date_published) | dateToRfc822 }}</pubDate>
                 <dc:creator>{{ metadata.author.name }}</dc:creator>
                 <guid>{{ absolutePostUrl }}</guid>
             </item>

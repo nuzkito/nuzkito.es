@@ -2,7 +2,6 @@
     display: flex;
     padding: 0 .5rem;
     justify-content: center;
-    margin-bottom: 1.2em;
     grid-column: 2 / 3;
 }
 

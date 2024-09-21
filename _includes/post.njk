@@ -16,15 +16,24 @@ layout: layout.njk
                 <h1 class="Post-title">{{ title }}</h1>
             {%- endif %}
             <section class="Post-meta">
-                <time class="Post-date" datetime="{{ date_published.toISOString() }}">{{ date_published.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' }) }}</time>
-                <span class="Post-readingTime">
-                    {{ content | timeToRead }} de lectura
-                </span>
-                <div class="Post-tags">
-                    {%- for tag in tags -%}
-                        <a href="/etiqueta/{{ tag | slugify }}">{{ tag }}</a>
-                    {%- endfor -%}
+                <div class="Post-publishedAt">
+                    Publicado el <time class="Post-date" datetime="{{ date_published.toISOString() }}">{{ date_published.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' }) }}</time>
                 </div>
+                {%- if date_published.toDateString() !== date_updated.toDateString() %}
+                    <div class="Post-modifiedAt">
+                        Actualizado el <time class="Post-date" datetime="{{ date_updated.toISOString() }}">{{ date_updated.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' }) }}</time>
+                    </div>
+                {%- endif %}
+                <div class="Post-readingTime">
+                    {{ content | timeToRead }} de lectura
+                </div>
+                {%- if tags %}
+                    <nav class="Post-tags">
+                        {%- for tag in tags -%}
+                            <a href="/etiqueta/{{ tag | slugify }}">{{ tag }}</a>
+                        {%- endfor -%}
+                    </nav>
+                {%- endif %}
             </section>
         </header>
         <section class="Post-content">

@@ -1,0 +1,45 @@
+.PostListItem {
+    margin-top: 1rem;
+}
+
+.PostListItem:not(:last-of-type):after {
+    display: block;
+    content: '';
+    border-bottom: 1px dashed var(--separatorColor);
+}
+
+.PostListItem-header {
+    margin-bottom: 1em;
+}
+
+.PostListItem-excerpt {
+    font-weight: 300;
+    word-wrap: break-word;
+    margin: auto;
+    padding: 0 1rem;
+    margin-bottom: 1em;
+    line-height: 1.6em;
+}
+
+.PostListItem-meta {
+    font-size: .8em;
+    color: var(--secondaryFontColor);
+    line-height: 1.35em;
+    padding: 0 1rem;
+    margin-bottom: 1em;
+}
+
+.PostListItem-tags {
+    display: inline;
+}
+
+.PostListItem-tags a {
+    display: inline-block;
+    text-decoration: underline;
+    margin: 0 .5ch;
+    color: currentColor;
+}
+
+.PostListItem-tags a:hover {
+    color: var(--branchColor);
+}

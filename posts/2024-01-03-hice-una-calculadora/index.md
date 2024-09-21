@@ -3,6 +3,7 @@ layout: post.njk
 title: ¡Hice una calculadora! - Creando un intérprete de código
 permalink: hice-una-calculadora/
 date_published: 2024-01-03
+date_updated: 2024-01-03
 description: Desarrollé un intérprete de código que realiza operaciones matemáticas
 ---
 

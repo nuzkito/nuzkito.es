@@ -3,6 +3,7 @@ layout: post.njk
 title: Compiladores e intérpretes
 permalink: compiladores-e-interpretes/
 date_published: 2023-12-28
+date_updated: 2023-12-28
 description: Recopilación de enlaces sobre cómo crear un compilador o un intérprete de código.
 ---
 Estos días he estado haciendo [un pequeño intérprete de código](/hice-una-calculadora/) y, durante el proceso, he estado revisando varias publicaciones al respecto.
