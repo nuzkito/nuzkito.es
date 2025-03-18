@@ -4,24 +4,24 @@
     "publisher": {
         "@type": "Organization",
         "name": "{{ metadata.title }}",
-        "url": "{{ metadata.url }}",
+        "url": "{{ config.url }}",
         "logo": {
             "@type": "ImageObject",
-            "url": "{{ metadata.url }}/favicon.ico",
+            "url": "{{ config.url }}/favicon.ico",
             "width": 60,
             "height": 60
         }
     },
-    "url": "{{ metadata.url }}",
+    "url": "{{ config.url }}",
     "image": {
         "@type": "ImageObject",
-        "url": "{{ metadata.url }}/images/2015/02/cover-o-1.jpg",
+        "url": "{{ config.url }}/images/2015/02/cover-o-1.jpg",
         "width": 3200,
         "height": 2368
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "{{ metadata.url }}"
+        "@id": "{{ config.url }}"
     },
     "description": "{{ metadata.description }}"
 }

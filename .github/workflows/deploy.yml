@@ -36,6 +36,7 @@ jobs:
       - name: Build with Eleventy
         env:
           ENVIRONMENT: production
+          URL: https://nuzkito.es
         run: npx @11ty/eleventy
 
       - name: Setup Pages

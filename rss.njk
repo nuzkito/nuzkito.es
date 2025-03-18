@@ -1,29 +1,24 @@
----json
-{
-    "permalink": "feed.xml",
-    "eleventyExcludeFromCollections": true,
-    "metadata": {
-        "title": "La web de Nuzkito",
-        "description": "Blog sobre desarrollo de software",
-        "language": "es",
-        "url": "https://nuzkito.es/",
-        "author": {
-            "name": "Nuzkito"
-        }
-    }
-}
+---
+permalink: feed.xml
+eleventyExcludeFromCollections: true
+metadata:
+    title: La web de Nuzkito
+    description: Blog sobre desarrollo de software
+    language: es
+    author:
+        name: Nuzkito
 ---
 
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="{{ metadata.url }}" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="{{ config.url }}" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>{{ metadata.title }}</title>
-        <link>{{ metadata.url }}</link>
+        <link>{{ config.url }}</link>
         <atom:link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self" type="application/rss+xml"/>
         <description>{{ metadata.description }}</description>
         <language>{{ metadata.language }}</language>
         {%- for post in collections.all | reverse %}
-            {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
+            {%- set absolutePostUrl = post.url | absoluteUrl(config.url) %}
             <item>
                 <title>{{ post.data.title }}</title>
                 <link>{{ absolutePostUrl }}</link>

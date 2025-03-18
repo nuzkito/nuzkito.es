@@ -3,7 +3,6 @@ metadata:
   title: Nuzkito.es
   description: Blog sobre desarrollo de software
   language: es
-  url: https://nuzkito.es
   author:
     name: Nuzkito
 ---
@@ -17,21 +16,21 @@ metadata:
         <meta name="HandheldFriendly" content="True"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="referrer" content="no-referrer-when-downgrade"/>
-        <link rel="shortcut icon" href="{{ metadata.url }}/favicon.ico">
-        <link rel="stylesheet" href="{{ metadata.url }}/css/index.css">
+        <link rel="shortcut icon" href="{{ config.url }}/favicon.ico">
+        <link rel="stylesheet" href="{{ config.url }}/css/index.css">
         <link href="https://unpkg.com/prismjs@1.29.0/themes/prism-okaidia.css" rel="stylesheet">
         <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
         <meta property="og:site_name" content="{{ metadata.title }}"/>
         <meta property="og:type" content="website"/>
         <meta property="og:title" content="{{ title or metadata.title }}"/>
         <meta property="og:description" content="{{ description or metadata.description }}"/>
-        <meta property="og:url" content="{{ metadata.url }}"/>
-        <meta property="og:image" content="{{ metadata.url }}/images/2015/02/cover-o-1.jpg"/>
+        <meta property="og:url" content="{{ config.url }}"/>
+        <meta property="og:image" content="{{ config.url }}/images/2015/02/cover-o-1.jpg"/>
         <meta name="twitter:card" content="summary_large_image"/>
         <meta name="twitter:title" content="{{ title or metadata.title }}"/>
         <meta name="twitter:description" content="{{ description or metadata.description }}"/>
-        <meta name="twitter:url" content="{{ metadata.url }}"/>
-        <meta name="twitter:image" content="{{ metadata.url }}/images/2015/02/cover-o-1.jpg"/>
+        <meta name="twitter:url" content="{{ config.url }}"/>
+        <meta name="twitter:image" content="{{ config.url }}/images/2015/02/cover-o-1.jpg"/>
         <meta name="twitter:site" content="@nuzkito"/>
         <meta property="og:image:width" content="3200"/>
         <meta property="og:image:height" content="2368"/>
