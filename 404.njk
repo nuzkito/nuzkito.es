@@ -3,21 +3,16 @@ layout: layout.njk
 permalink: 404.html
 eleventyExcludeFromCollections: true
 ---
+
 {% set latestPosts = collections.all | reverse %}
 <main class="content" role="main">
     <section class="Latest-posts">
-        <h1 class="Latest-posts--title">No se ha encontrado la página</h1>
-        <p>Pero por si te interesa, te dejo por aquí algunos de los últimos artículos que he escrito:</p>
-        {%- for post in latestPosts.slice(0, 5) -%}
-            <ul class="Latest-posts--list">
-                <li class="Latest-posts--item">
-                    <a href="{{ post.page.url }}">{{ post.data.title }}</a>
-                    <br>
-                    <time class="Latest-posts--date" datetime="{{ post.data.date_published.toISOString() }}">
-                        {{ post.data.date_published.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' }) }}
-                    </time>
-                </li>
-            </ul>
-        {%- endfor -%}
+        <h1 class="Latest-posts--title">Vaya, esta página no existe :(</h1>
+        <p>Pero por si te interesa, te dejo por aquí enlaces a lo último que he escrito:</p>
+        <ul class="Latest-posts--list">
+            {%- for post in latestPosts.slice(0, 5) -%}
+                {% include "post-list-item.njk" %}
+            {%- endfor -%}
+        </ul>
     </section>
 </main>

@@ -9,11 +9,9 @@
     text-align: center;
     grid-column: 1 / 4;
     transition: --offset-angle .3s ease-in-out;
-    background: repeating-conic-gradient(
-        from var(--offset-angle) at -5% 5%,
-        hsl(var(--branchColorHue), var(--branchColorSaturation), 96%) 0deg 5deg,
-        hsl(var(--branchColorHue), var(--branchColorSaturation), 92%) 5deg 10deg
-    );
+    background: repeating-conic-gradient(from var(--offset-angle) at -5% 5%,
+            hsl(var(--branchColorHue), var(--branchColorSaturation), 96%) 0deg 5deg,
+            hsl(var(--branchColorHue), var(--branchColorSaturation), 92%) 5deg 10deg);
 }
 
 .Header:hover {
@@ -28,7 +26,11 @@
     color: var(--fontColor);
 }
 
-.Header .job {
+.Header .description {
     color: var(--branchColor);
     margin: 0;
+}
+
+.main-link {
+    text-decoration: none;
 }

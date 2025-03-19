@@ -50,26 +50,11 @@
 
 .Post-tags a {
     display: inline-block;
-    text-decoration: underline;
     margin: 0 .5ch;
-    color: currentColor;
-}
-
-.Post-tags a:hover {
-    color: var(--branchColor);
 }
 
 .Post-content {
     padding: 1rem 1rem 1.5em;
-}
-
-.Post-content a {
-    text-decoration: underline;
-}
-
-.Post-content a:hover {
-    color: var(--branchColor);
-    text-decoration-color: var(--branchColor);
 }
 
 .Post-content img {
@@ -95,7 +80,7 @@
     font-size: .8em;
 }
 
-.Post-content > :first-child {
+.Post-content> :first-child {
     margin-top: 0;
 }
 

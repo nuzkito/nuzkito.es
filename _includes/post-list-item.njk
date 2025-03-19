@@ -1,0 +1,13 @@
+<li class="Latest-posts--item">
+    <a class="Latest-posts--link" href="{{ post.page.url }}">{{ post.data.title }}</a>
+    {%- if post.data.date_published.toDateString() === post.data.date_updated.toDateString() %}
+        <time class="Latest-posts--date" datetime="{{ post.data.date_published.toISOString() }}">
+            {{ post.data.date_published.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' }) }}
+        </time>
+    {%- else %}
+        <time class="Latest-posts--date" datetime="{{ post.data.date_updated.toISOString() }}">
+            Actualizado el
+            {{ post.data.date_updated.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' }) }}
+        </time>
+    {%- endif %}
+</li>

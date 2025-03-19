@@ -8,7 +8,7 @@
     --branchColor: hsl(var(--branchColorHue), var(--branchColorSaturation), var(--branchColorLightness));
     --fontColor: hsl(202, 9%, 25%);
     --secondaryFontColor: hsl(0, 0%, 60%);
-    --backgroundColor: hsl(0, 0%, 100%);
+    --backgroundColor: hsl(0, 0%, 99%);
 }
 
 .dark-mode {
