@@ -16,8 +16,12 @@ metadata:
         <meta name="HandheldFriendly" content="True"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="referrer" content="no-referrer-when-downgrade"/>
-        <link rel="alternate" type="application/rss+xml" title="{{ metadata.title }}" href="{{ config.url }}/feed.xml">
         <link rel="shortcut icon" href="{{ config.url }}/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ config.url }}/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ config.url }}/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ config.url }}/favicon-16x16.png">
+        <link rel="manifest" href="{{ config.url }}/site.webmanifest">
+        <link rel="alternate" type="application/rss+xml" title="{{ metadata.title }}" href="{{ config.url }}/feed.xml">
         <link rel="stylesheet" href="{{ config.url }}/css/index.css">
         <link href="https://unpkg.com/prismjs@1.29.0/themes/prism-okaidia.css" rel="stylesheet">
         <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
