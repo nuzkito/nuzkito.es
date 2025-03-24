@@ -37,11 +37,6 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(timeToRead, {
         language: 'es',
     })
-    eleventyConfig.addPassthroughCopy("blog.css")
     eleventyConfig.addPassthroughCopy("css")
-    eleventyConfig.addPassthroughCopy("favicon.ico")
-    eleventyConfig.addPassthroughCopy("fonts")
-    eleventyConfig.addPassthroughCopy("images")
-    eleventyConfig.addPassthroughCopy("CNAME")
     eleventyConfig.addPassthroughCopy({ "resources": "." })
 }
