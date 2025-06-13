@@ -19,6 +19,7 @@
 }
 
 .Header .name {
+    font-family: "Reddit Mono", monospace;
     margin: 0;
     font-size: 1.2em;
     letter-spacing: initial;
@@ -27,6 +28,7 @@
 }
 
 .Header .description {
+    font-family: "Reddit Mono", monospace;
     color: var(--branchColor);
     margin: 0;
 }

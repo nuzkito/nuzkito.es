@@ -1,5 +1,6 @@
 :root {
-    --fontFamily: 'Work Sans', sans-serif;
+    --titleFontFamily: "PT Serif", serif;
+    --textFontFamily: "Inter", sans-serif;
 
     --separatorColor: hsl(0, 0%, 87%);
     --branchColorHue: 147;
