@@ -3,7 +3,7 @@ layout: post.njk
 title: Consejos para programar usando inteligencia artificial generativa
 permalink: consejos-para-programar-usando-inteligencia-artificial-generativa/
 date_published: 2025-03-23 19:31:00
-date_updated: 2025-09-18 16:30:00
+date_updated: 2025-09-18 17:10:00
 description: Consejos para programar usando inteligencia artificial generativa.
 ---
 
@@ -50,7 +50,7 @@ Para mí, crear los tests es la parte más pesada y aburrida del desarrollo de s
 
 Suelo especificar qué pruebas quiero generar. Puedo pedir un test que compruebe que «el campo de email recibe un email de forma correcta», y otro que «el campo de email de un error si no se introduce un email bien formado». En ocasiones también puedo pedir al LLM que complemente los tests, por si se le ocurre un caso de uso que no se me ha ocurrido a mí. Sin embargo, sigo manteniendo la parte en la que analizo previamente qué tests necesito. El LLM, por muy bueno que sea, también se puede dejar casos de uso sin probar.
 
-Una cosa que me ha funcionado relativamente bien es pedir al LLM que ejecute los tests que haya creado. Si encuentra algún error, entonces le dejo que intente solucionarlo por su cuenta. No siempre consigue arreglar el problema, pero en ocasiones ahorra un poco de tiempo.
+Una cosa que me ha funcionado relativamente bien es pedir al LLM que ejecute los tests que haya creado. En caso de utilizar una herramienta que no tiene capacidad para ejecutar tests, tambien puede funcionar pegar los errores en la conversación. Si encuentra algún error, entonces le dejo que intente solucionarlo por su cuenta. No siempre consigue arreglar el problema, pero en ocasiones ahorra un poco de tiempo.
 
 ## Revisión y refactorización
 Al generar código con un LLM, la revisión es un punto muy importante. Primero trato de entender cómo funciona el código que ha generado. Entender qué hace el código me parece una de las cosas más importantes.
