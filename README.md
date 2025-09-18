@@ -9,3 +9,5 @@ docker compose up server
 ```bash
 docker compose run eleventy npm i
 ```
+
+Local url: http://localhost
