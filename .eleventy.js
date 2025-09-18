@@ -2,7 +2,6 @@ const markdownIt = require("markdown-it")
 const markdownItAttrs = require("markdown-it-attrs")
 const { feedPlugin } = require("@11ty/eleventy-plugin-rss")
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
-const timeToRead = require('eleventy-plugin-time-to-read')
 const config = require('./_data/config.js')
 
 module.exports = function (eleventyConfig) {
@@ -34,9 +33,6 @@ module.exports = function (eleventyConfig) {
         }
     })
     eleventyConfig.addPlugin(syntaxHighlight)
-    eleventyConfig.addPlugin(timeToRead, {
-        language: 'es',
-    })
     eleventyConfig.addPassthroughCopy("css")
     eleventyConfig.addPassthroughCopy({ "resources": "." })
 }

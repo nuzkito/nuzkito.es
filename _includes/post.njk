@@ -24,9 +24,6 @@ layout: layout.njk
                         Actualizado el <time class="Post-date" datetime="{{ date_updated.toISOString() }}">{{ date_updated.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' }) }}</time>
                     </div>
                 {%- endif %}
-                <div class="Post-readingTime">
-                    {{ content | timeToRead }} de lectura
-                </div>
                 {%- if tags %}
                     <nav class="Post-tags">
                         {%- for tag in tags -%}
