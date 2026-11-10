@@ -1,0 +1,27 @@
+services:
+  serve:
+    build:
+      dockerfile_inline: |
+        FROM php:8.5-cli
+        COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
+        RUN install-php-extensions gd zip @composer
+        # Without a UTF-8 locale, unzip mangles non-ASCII paths (Livewire's ⚡ components).
+        ENV LANG=C.UTF-8
+        ENV COMPOSER_HOME=/opt/composer
+        ENV PATH="/opt/composer/vendor/bin:$${PATH}"
+        ARG PLUMA_VERSION
+        RUN composer global require "nuzkito/pluma:$${PLUMA_VERSION}" --prefer-dist --no-interaction --optimize-autoloader \
+            && chown -R 1000:1000 /opt/composer
+      args:
+        PLUMA_VERSION: ${PLUMA_VERSION:?Set PLUMA_VERSION in .env}
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "8010:8010" # Editor
+      - "8011:8011" # Site preview
+    environment:
+      LOG_CHANNEL: stderr
+      VIEW_COMPILED_PATH: /tmp/pluma/views
+    command: pluma serve --host=0.0.0.0
+    user: "1000:1000"

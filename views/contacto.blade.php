@@ -1,0 +1,18 @@
+@extends('layout')
+
+@php(Head::title('Contacto'))
+
+@section('content')
+<main class="content" role="main">
+    <nav class="Contact">
+        <h1>Puedes encontrarme en</h1>
+        <ul>
+            <li><a target="_blank" href="https://github.com/nuzkito">@nuzkito en GitHub</a></li>
+            <li><a target="_blank" href="https://codepen.io/nuzkito">@nuzkito en CodePen</a></li>
+            <li><a target="_blank" href="https://www.linkedin.com/in/nuzkito">@nuzkito en LinkedIn</a></li>
+            <li><a target="_blank" href="https://twitter.com/nuzkito">@nuzkito en Twitter</a></li>
+            <li><a target="_blank" href="https://bsky.app/profile/nuzkito.es">@nuzkito.es en Bluesky</a></li>
+        </ul>
+    </nav>
+</main>
+@endsection

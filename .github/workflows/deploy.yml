@@ -23,30 +23,37 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
         with:
-          node-version: 20
+          php-version: '8.5'
+          extensions: gd
+          tools: composer:v2
 
-      - name: 'Install depedencies'
-        run: npm i
+      - name: Install Pluma
+        run: |
+          set -a; . ./.env; set +a
+          composer global require "nuzkito/pluma:${PLUMA_VERSION}" --prefer-dist --no-interaction --optimize-autoloader
+          composer global config bin-dir --absolute >> "$GITHUB_PATH"
 
-      - name: Build with Eleventy
-        env:
-          ENVIRONMENT: production
-          URL: https://nuzkito.es
-        run: npx @11ty/eleventy
+      - name: Set production URL
+        run: |
+          jq '.url = "https://nuzkito.es"' pluma-settings.json > pluma-settings.tmp.json
+          mv pluma-settings.tmp.json pluma-settings.json
+
+      - name: Build with Pluma
+        run: pluma generate
 
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v6
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
-          path: './_site'
+          path: './site'
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

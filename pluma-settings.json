@@ -1,0 +1,41 @@
+{
+    "editor_url": "http://127.0.0.1:8010",
+    "url": "http://127.0.0.1:8011",
+    "title": "Nuzkito.es",
+    "description": "Blog sobre desarrollo de software e inteligencia artificial",
+    "cover_image": "cover-o-1.jpg",
+    "language": "es",
+    "author": "Nuzkito",
+    "favicon": "favicon-32x32.png",
+    "apple_touch_icon": "apple-touch-icon.png",
+    "twitter": {
+        "site": "nuzkito",
+        "creator": "nuzkito"
+    },
+    "tags": {
+        "create_pages": true,
+        "pages_path": "etiqueta"
+    },
+    "types": {
+        "default": ""
+    },
+    "rss": {
+        "enabled": true
+    },
+    "embedding": {
+        "enabled": false,
+        "allowed_domains": [
+            "youtube.com",
+            "x.com",
+            "github.com"
+        ]
+    },
+    "html": {
+        "allow_style_tags": true,
+        "allow_iframes": true,
+        "allow_script_tags": true
+    },
+    "highlight": {
+        "theme": "dark-plus"
+    }
+}
